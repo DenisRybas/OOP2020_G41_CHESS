@@ -1,4 +1,4 @@
-package rybas;
+package rybas.models;
 
 import rybas.figures.Figure;
 

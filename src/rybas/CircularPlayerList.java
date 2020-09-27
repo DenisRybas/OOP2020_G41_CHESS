@@ -1,10 +1,5 @@
 package rybas;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
-
 public class CircularPlayerList {
     private Player white, black;
     private Player activePlayer;
@@ -19,6 +14,10 @@ public class CircularPlayerList {
 
     public Player getActivePlayer() {
         return activePlayer;
+    }
+
+    public void next() {
+        activePlayer = activePlayer.getNext();
     }
 
     public void setActivePlayer(Player activePlayer) {

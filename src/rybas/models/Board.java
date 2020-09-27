@@ -1,8 +1,10 @@
-package rybas;
+package rybas.models;
 
 
 import rybas.factories.figureFactory.FigureFactory;
 import rybas.figures.*;
+
+import java.awt.*;
 
 public class Board {
     private Cell[][] field;
@@ -27,7 +29,7 @@ public class Board {
                             f.createNewFigure(Figure.Type.QUEEN, isWhite ? Figure.Color.WHITE : Figure.Color.BLACK));
                 } else if (i == 1 || i == field.length - 2) {
                     field[i][j] = new Cell(
-                            f.createNewFigure(Figure.Type.PAWN, isWhite ? Figure.Color.WHITE : Figure.Color.BLACK)));
+                            f.createNewFigure(Figure.Type.PAWN, isWhite ? Figure.Color.WHITE : Figure.Color.BLACK));
                 } else {
                     field[i][j] = new Cell(null);
                 }
@@ -35,13 +37,22 @@ public class Board {
         }
     }
 
-    public static boolean isInField(Position position) {
-        if (position == null) return false;
-        return !(position.getFirst() < 0 ||
-                position.getFirst() >= 8 ||
-                position.getSecond() < 0 ||
-                position.getSecond() >= 8
+    public boolean isInField(Point p) {
+        if (p == null) return false;
+        return !(p.getX() < 0 ||
+                p.getX() >= 8 ||
+                p.getY() < 0 ||
+                p.getY() >= 8
         );
+    }
+
+    public Point getPosition(Cell cell) {
+        for (int i = 0; i < field.length; i++) {
+            for (int j = 0; j < field[i].length; j++) {
+                if (field[i][j] == cell) return new Point(i, j);
+            }
+        }
+        return null;
     }
 
     private Cell[][] getField() {
