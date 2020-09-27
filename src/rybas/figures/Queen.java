@@ -2,7 +2,7 @@ package rybas.figures;
 
 public class Queen implements Figure{
     private final Type type = Type.QUEEN;
-
+    private final Color c;
     @Override
     public Type getType() {
         return null;
@@ -11,6 +11,15 @@ public class Queen implements Figure{
     @Override
     public void setType(Type type) {
 
+    }
+
+    public Queen(Color c) {
+        this.c = c;
+    }
+
+    @Override
+    public Color getColor() {
+        return c;
     }
 
     @Override

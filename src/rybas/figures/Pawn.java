@@ -1,7 +1,12 @@
 package rybas.figures;
 
 public class Pawn implements Figure {
-    private final Type type = Type.PAWN;
+    private Type type = Type.PAWN;
+    private final Color c;
+
+    public Pawn(Color c) {
+        this.c = c;
+    }
 
     @Override
     public Type getType() {
@@ -11,6 +16,11 @@ public class Pawn implements Figure {
     @Override
     public void setType(Type type) {
 
+    }
+
+    @Override
+    public Color getColor() {
+        return c;
     }
 
     @Override
