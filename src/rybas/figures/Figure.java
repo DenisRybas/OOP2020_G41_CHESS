@@ -9,9 +9,8 @@ public interface Figure {
         KNIGHT,
         PAWN
     }
-    default Figure.Type getType() {
-        return null;
-    }
+    Figure.Type getType();
+    void setType(Figure.Type type);
 
     void beat();
 }

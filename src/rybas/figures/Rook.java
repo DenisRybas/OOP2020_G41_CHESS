@@ -9,6 +9,11 @@ public class Rook implements Figure {
     }
 
     @Override
+    public void setType(Type type) {
+
+    }
+
+    @Override
     public void beat() {
 
     }
