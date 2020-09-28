@@ -1,11 +1,11 @@
 package rybas.figures;
 
-public class Pawn implements Figure {
-    private Type type = Type.PAWN;
-    private final Color c;
+import rybas.models.Cell;
 
-    public Pawn(Color c) {
-        this.c = c;
+public class Pawn implements Figure {
+    @Override
+    public Color getColor() {
+        return null;
     }
 
     @Override
@@ -14,17 +14,17 @@ public class Pawn implements Figure {
     }
 
     @Override
-    public void setType(Type type) {
+    public Cell getCurrentCell() {
+        return null;
+    }
+
+    @Override
+    public void setCurrentCell(Cell c) {
 
     }
 
     @Override
-    public Color getColor() {
-        return c;
-    }
-
-    @Override
-    public void beat() {
+    public void move(Cell c) {
 
     }
 }

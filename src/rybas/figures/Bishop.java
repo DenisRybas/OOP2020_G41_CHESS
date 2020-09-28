@@ -1,13 +1,11 @@
 package rybas.figures;
 
-import java.awt.*;
+import rybas.models.Cell;
 
 public class Bishop implements Figure {
-    private final Type type = Type.BISHOP;
-    private final Color c;
-
-    public Bishop(Color c) {
-        this.c = c;
+    @Override
+    public Color getColor() {
+        return null;
     }
 
     @Override
@@ -16,17 +14,17 @@ public class Bishop implements Figure {
     }
 
     @Override
-    public void setType(Type type) {
+    public Cell getCurrentCell() {
+        return null;
+    }
+
+    @Override
+    public void setCurrentCell(Cell c) {
 
     }
 
     @Override
-    public Color getColor() {
-        return c;
-    }
-
-    @Override
-    public void beat() {
+    public void move(Cell c) {
 
     }
 }

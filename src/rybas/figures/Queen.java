@@ -1,29 +1,30 @@
 package rybas.figures;
 
-public class Queen implements Figure{
-    private final Type type = Type.QUEEN;
-    private final Color c;
+import rybas.models.Cell;
+
+public class Queen implements Figure {
+    @Override
+    public Color getColor() {
+        return null;
+    }
+
     @Override
     public Type getType() {
         return null;
     }
 
     @Override
-    public void setType(Type type) {
-
-    }
-
-    public Queen(Color c) {
-        this.c = c;
+    public Cell getCurrentCell() {
+        return null;
     }
 
     @Override
-    public Color getColor() {
-        return c;
+    public void setCurrentCell(Cell c) {
+
     }
 
     @Override
-    public void beat() {
+    public void move(Cell c) {
 
     }
 }

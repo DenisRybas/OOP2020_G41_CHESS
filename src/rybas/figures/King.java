@@ -1,11 +1,11 @@
 package rybas.figures;
 
-public class King implements Figure {
-    private final Type type = Type.KING;
-    private final Color c;
+import rybas.models.Cell;
 
-    public King(Color c) {
-        this.c = c;
+public class King implements Figure {
+    @Override
+    public Color getColor() {
+        return null;
     }
 
     @Override
@@ -14,17 +14,17 @@ public class King implements Figure {
     }
 
     @Override
-    public void setType(Type type) {
+    public Cell getCurrentCell() {
+        return null;
+    }
+
+    @Override
+    public void setCurrentCell(Cell c) {
 
     }
 
     @Override
-    public Color getColor() {
-        return c;
-    }
-
-    @Override
-    public void beat() {
+    public void move(Cell c) {
 
     }
 }

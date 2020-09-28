@@ -1,5 +1,6 @@
-package rybas.service;
+package rybas.services;
 
+import rybas.models.Board;
 import rybas.models.Cell;
 
 import java.util.LinkedHashMap;
@@ -10,5 +11,5 @@ public interface FigureService {
         BEAT,
         MOVE
     }
-    LinkedHashMap<TypeOfMove, Set<Cell>> getPossibleMoves();
+    LinkedHashMap<TypeOfMove, Set<Cell>> getPossibleMoves(Board b);
 }

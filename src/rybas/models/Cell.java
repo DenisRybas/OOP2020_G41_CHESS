@@ -2,12 +2,19 @@ package rybas.models;
 
 import rybas.figures.Figure;
 
+import java.awt.*;
+
 public class Cell {
     private Figure f;
     private Cell left, right;
     private Cell up, down;
     private Cell upRight, downRight;
     private Cell upLeft, downLeft;
+    private CellColor c;
+    enum CellColor {
+        LIGHT,
+        DARK
+    }
 
     public Cell(Figure f, Cell left, Cell right, Cell up, Cell down,
                 Cell upRight, Cell downRight, Cell upLeft, Cell downLeft) {
@@ -22,8 +29,9 @@ public class Cell {
         this.downLeft = downLeft;
     }
 
-    public Cell(Figure f) {
+    public Cell(Figure f, CellColor c) {
         this.f = f;
+        this.c = c;
     }
 
     public Cell() {

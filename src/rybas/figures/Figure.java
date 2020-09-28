@@ -1,6 +1,6 @@
 package rybas.figures;
 
-import java.awt.*;
+import rybas.models.Cell;
 
 public interface Figure {
     enum Type {
@@ -16,8 +16,10 @@ public interface Figure {
         BLACK,
         WHITE
     }
-    Figure.Type getType();
-    void setType(Figure.Type type);
+
     Color getColor();
-    void beat();
+    Figure.Type getType();
+    Cell getCurrentCell();
+    void setCurrentCell(Cell c);
+    void move(Cell c);
 }
