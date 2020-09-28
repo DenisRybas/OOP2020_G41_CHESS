@@ -5,6 +5,7 @@ import rybas.models.Board;
 import rybas.models.Cell;
 
 import java.awt.*;
+import java.nio.channels.Pipe;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
@@ -41,19 +42,24 @@ public class ChessService {
         int posX = cell.getCoordinate().x;
         int posY = cell.getCoordinate().y;
 
+        //TODO: пешка дошла до конца
+
         if (cell.getFigure().getColor() == Figure.Color.WHITE) {
             if (posY == 6) {
                 for (int i = posY - 1; i > posY - 3; i--) {
                     if (field[posX][i].getFigure() == null) moves.add(field[posX][i]);
                 }
             } else {
-                if (field[posX][posY - 1].getFigure() == null) moves.add(field[posX][posY - 1]);
+                if (isOnBoard(new Point(posX, posY - 1)) && field[posX][posY - 1].getFigure() == null)
+                    moves.add(field[posX][posY - 1]);
             }
 
-            if (field[posX - 1][posY - 1].getFigure() != null &&
+            if (isOnBoard(new Point(posX - 1, posY - 1)) &&
+                    field[posX - 1][posY - 1].getFigure() != null &&
                     field[posX - 1][posY - 1].getFigure().getColor() == Figure.Color.BLACK)
                 beatMoves.add(field[posX - 1][posY - 1]);
-            if (field[posX + 1][posY - 1].getFigure() != null &&
+            if (isOnBoard(new Point(posX + 1, posY - 1)) &&
+                    field[posX + 1][posY - 1].getFigure() != null &&
                     field[posX + 1][posY - 1].getFigure().getColor() == Figure.Color.BLACK)
                 beatMoves.add(field[posX + 1][posY - 1]);
         } else {
@@ -62,13 +68,17 @@ public class ChessService {
                     if (field[posX][i].getFigure() == null) moves.add(field[posX][i]);
                 }
             } else {
-                if (field[posX][posY + 1].getFigure() == null) moves.add(field[posX][posY + 1]);
+                if (isOnBoard(new Point(posX, posY + 1)) &&
+                        field[posX][posY + 1].getFigure() == null)
+                    moves.add(field[posX][posY + 1]);
             }
 
-            if (field[posX - 1][posY + 1].getFigure() != null &&
+            if (isOnBoard(new Point(posX - 1, posY + 1)) &&
+                    field[posX - 1][posY + 1].getFigure() != null &&
                     field[posX - 1][posY + 1].getFigure().getColor() == Figure.Color.WHITE)
                 beatMoves.add(field[posX - 1][posY + 1]);
-            if (field[posX + 1][posY + 1].getFigure() != null &&
+            if (isOnBoard(new Point(posX + 1, posY + 1)) &&
+                    field[posX + 1][posY + 1].getFigure() != null &&
                     field[posX + 1][posY + 1].getFigure().getColor() == Figure.Color.WHITE)
                 beatMoves.add(field[posX + 1][posY + 1]);
         }
@@ -136,5 +146,14 @@ public class ChessService {
             putAll(getBishopPossibleMoves(board, cell));
             putAll(getRookPossibleMoves(board, cell));
         }};
+    }
+
+    public static boolean isOnBoard(Point p) {
+        if (p == null) return false;
+        return !(p.getX() < 0 ||
+                p.getX() >= 8 ||
+                p.getY() < 0 ||
+                p.getY() >= 8
+        );
     }
 }

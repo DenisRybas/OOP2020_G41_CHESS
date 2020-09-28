@@ -39,14 +39,7 @@ public class Board {
         }
     }
 
-    public boolean isInBoard(Point p) {
-        if (p == null) return false;
-        return !(p.getX() < 0 ||
-                p.getX() >= 8 ||
-                p.getY() < 0 ||
-                p.getY() >= 8
-        );
-    }
+
 
     public Cell getCell(Point position) {
         return field[position.x][position.y];
