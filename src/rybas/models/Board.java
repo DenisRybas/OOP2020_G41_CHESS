@@ -48,6 +48,9 @@ public class Board {
         );
     }
 
+    public Cell getCell(Point position) {
+        return field[position.x][position.y];
+    }
     public Point getPosition(Cell cell) {
         for (int i = 0; i < field.length; i++) {
             for (int j = 0; j < field[i].length; j++) {
@@ -57,7 +60,7 @@ public class Board {
         return null;
     }
 
-    private Cell[][] getField() {
+    public Cell[][] getField() {
         return field;
     }
 }

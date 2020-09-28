@@ -7,15 +7,21 @@ import java.awt.*;
 public class Cell {
     private Figure f;
     private CellColor c;
+    private Point coordinate;
 
     enum CellColor {
         LIGHT,
         DARK
     }
 
-    public Cell(Figure f, CellColor c) {
+    public Cell(Figure f, CellColor c, Point coordinate) {
         this.f = f;
         this.c = c;
+        this.coordinate = coordinate;
+    }
+
+    public Point getCoordinate() {
+        return coordinate;
     }
 
     public Cell() {

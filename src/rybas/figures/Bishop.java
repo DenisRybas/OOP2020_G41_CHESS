@@ -2,7 +2,10 @@ package rybas.figures;
 
 import rybas.models.Cell;
 
-public class Bishop implements Figure {
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+
+public class Bishop implements Figure, Movable {
     private Cell currentCell;
     private final Figure.Type type;
     private final Figure.Color color;
@@ -30,6 +33,11 @@ public class Bishop implements Figure {
     @Override
     public void setCurrentCell(Cell c) {
 
+    }
+
+    @Override
+    public LinkedHashMap<TypeOfMove, LinkedHashSet<Cell>> getPossibleMoves() {
+        return null;
     }
 
     @Override

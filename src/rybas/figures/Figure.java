@@ -21,5 +21,4 @@ public interface Figure {
     Figure.Type getType();
     Cell getCurrentCell();
     void setCurrentCell(Cell c);
-    void move(Cell c);
 }
