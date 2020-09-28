@@ -3,6 +3,10 @@ package rybas.figures;
 import rybas.models.Cell;
 
 public class Knight implements Figure {
+    private Cell currentCell;
+    private Figure.Type type;
+    private Figure.Color color;
+
     @Override
     public Color getColor() {
         return null;
