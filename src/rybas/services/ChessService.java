@@ -27,7 +27,28 @@ public class ChessService {
     }
 
     public static LinkedHashMap<TypeOfMove, LinkedHashSet<Cell>> getKingPossibleMoves(Board board, Cell cell) {
-        return null;
+        LinkedHashMap<TypeOfMove, LinkedHashSet<Cell>> pm = new LinkedHashMap<>();
+        LinkedHashSet<Cell> beatMoves = new LinkedHashSet<>();
+        LinkedHashSet<Cell> moves = new LinkedHashSet<>();
+        Cell[][] field = board.getField();
+        int posX = cell.getCoordinate().x;
+        int posY = cell.getCoordinate().y;
+
+        for (int i = posY - 1; i < posY + 2; i++) {
+            for (int j = posX - 1; j < posX + 2; j++) {
+                if (isOnBoard(new Point(j, i))) {
+                    if (field[i][j].getFigure() != null) {
+                        if (field[i][j].getFigure().getColor() != cell.getFigure().getColor()) {
+                            beatMoves.add(field[i][j]);
+                        }
+                    }
+                    if (field[i][j] == null) moves.add(field[i][j]);
+                }
+            }
+        }
+        pm.put(TypeOfMove.MOVE, moves);
+        pm.put(TypeOfMove.BEAT, beatMoves);
+        return pm;
     }
 
     public static LinkedHashMap<TypeOfMove, LinkedHashSet<Cell>> getKnightPossibleMoves(Board board, Cell cell) {
@@ -102,7 +123,6 @@ public class ChessService {
             } else {
                 if (field[posX][i].getFigure().getColor() != cell.getFigure().getColor())
                     beatMoves.add(field[posX][i]);
-                break;
             }
         }
 
@@ -112,7 +132,6 @@ public class ChessService {
             } else {
                 if (field[posX][i].getFigure().getColor() != cell.getFigure().getColor())
                     beatMoves.add(field[posX][i]);
-                break;
             }
         }
 
@@ -122,7 +141,6 @@ public class ChessService {
             } else {
                 if (field[i][posY].getFigure().getColor() != cell.getFigure().getColor())
                     beatMoves.add(field[i][posY]);
-                break;
             }
         }
 
@@ -132,7 +150,6 @@ public class ChessService {
             } else {
                 if (field[i][posY].getFigure().getColor() != cell.getFigure().getColor())
                     beatMoves.add(field[i][posY]);
-                break;
             }
         }
 

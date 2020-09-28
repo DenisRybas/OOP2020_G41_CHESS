@@ -35,10 +35,6 @@ public class Bishop implements Figure, Movable {
 
     }
 
-    @Override
-    public LinkedHashMap<TypeOfMove, LinkedHashSet<Cell>> getPossibleMoves() {
-        return null;
-    }
 
     @Override
     public void move(Cell c) {
