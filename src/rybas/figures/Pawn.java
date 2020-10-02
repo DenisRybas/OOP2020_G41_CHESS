@@ -2,10 +2,14 @@ package rybas.figures;
 
 import rybas.models.Cell;
 
-public class Pawn implements Figure {
+public class Pawn implements Figure, Movable {
     private Cell currentCell;
     private Figure.Type type;
     private Figure.Color color;
+
+    public Pawn(Color color) {
+        this.color = color;
+    }
 
     @Override
     public Color getColor() {

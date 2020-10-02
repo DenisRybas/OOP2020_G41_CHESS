@@ -7,9 +7,8 @@ public class Queen implements Figure, Movable {
     private Figure.Type type;
     private Figure.Color color;
 
-    public Queen(Color color, Cell currentCell) {
+    public Queen(Color color) {
         this.color = color;
-        this.currentCell = currentCell;
     }
 
     @Override

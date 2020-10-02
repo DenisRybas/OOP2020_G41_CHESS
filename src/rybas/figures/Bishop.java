@@ -7,12 +7,11 @@ import java.util.LinkedHashSet;
 
 public class Bishop implements Figure, Movable {
     private Cell currentCell;
-    private final Figure.Type type;
+//    private final Figure.Type type;
     private final Figure.Color color;
 
     public Bishop(Color color) {
         this.color = color;
-        type = Type.BISHOP;
     }
 
     @Override
@@ -34,7 +33,6 @@ public class Bishop implements Figure, Movable {
     public void setCurrentCell(Cell c) {
 
     }
-
 
     @Override
     public void move(Cell c) {

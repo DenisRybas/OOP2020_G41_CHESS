@@ -2,11 +2,14 @@ package rybas.figures;
 
 import rybas.models.Cell;
 
-public class Rook implements Figure {
+public class Rook implements Figure, Movable {
     private Cell currentCell;
     private Figure.Type type;
     private Figure.Color color;
 
+    public Rook(Color color) {
+        this.color = color;
+    }
 
     @Override
     public Color getColor() {

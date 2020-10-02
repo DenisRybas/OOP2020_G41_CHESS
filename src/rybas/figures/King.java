@@ -2,11 +2,14 @@ package rybas.figures;
 
 import rybas.models.Cell;
 
-public class King implements Figure {
+public class King implements Figure, Movable {
     private Cell currentCell;
     private Figure.Type type;
     private Figure.Color color;
 
+    public King(Color color) {
+        this.color = color;
+    }
 
     @Override
     public Color getColor() {

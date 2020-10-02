@@ -7,10 +7,7 @@ import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 
 public interface Movable {
-    enum TypeOfMove {
-        BEAT,
-        MOVE
-    }
+
 //    LinkedHashMap<TypeOfMove, LinkedHashSet<Cell>> getPossibleMoves(Board b, Cell c);
 //    LinkedHashMap<TypeOfMove, LinkedHashSet<Cell>> getPossibleMoves(Board b);
     void move(Cell c);

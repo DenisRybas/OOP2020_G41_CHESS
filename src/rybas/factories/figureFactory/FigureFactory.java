@@ -4,25 +4,25 @@ import rybas.figures.*;
 import rybas.models.Cell;
 
 public class FigureFactory {
-    public Figure createNewFigure(Figure.Type t, Figure.Color c, Cell cell) {
+    public Figure createNewFigure(Figure.Type t, Figure.Color c) {
         switch (t) {
             case KING -> {
-                return new King(c, cell);
+                return new King(c);
             }
             case QUEEN -> {
-                return new Queen(c, cell);
+                return new Queen(c);
             }
             case ROOK -> {
-                return new Rook(c, cell);
+                return new Rook(c);
             }
             case BISHOP -> {
-                return new Bishop(c, cell);
+                return new Bishop(c);
             }
             case KNIGHT -> {
-                return new Knight(c, cell);
+                return new Knight(c);
             }
             case PAWN -> {
-                return new Pawn(c, cell);
+                return new Pawn(c);
             }
         }
         return null;

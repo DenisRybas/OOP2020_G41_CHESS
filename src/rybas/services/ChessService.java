@@ -5,8 +5,6 @@ import rybas.models.Board;
 import rybas.models.Cell;
 
 import java.awt.*;
-import java.nio.channels.Pipe;
-import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 
@@ -17,7 +15,7 @@ import java.util.LinkedHashSet;
  */
 
 public class ChessService {
-    enum TypeOfMove {
+    public enum TypeOfMove {
         BEAT,
         MOVE
     }
@@ -52,7 +50,40 @@ public class ChessService {
     }
 
     public static LinkedHashMap<TypeOfMove, LinkedHashSet<Cell>> getKnightPossibleMoves(Board board, Cell cell) {
-        return null;
+        LinkedHashMap<TypeOfMove, LinkedHashSet<Cell>> pm = new LinkedHashMap<>();
+        LinkedHashSet<Cell> beatMoves = new LinkedHashSet<>();
+        LinkedHashSet<Cell> moves = new LinkedHashSet<>();
+        Cell[][] field = board.getField();
+        int posX = cell.getCoordinate().x;
+        int posY = cell.getCoordinate().y;
+
+        for (int i = -2; i < 3; i++) {
+            for (int j = -2; j < 3; j++) {
+                if (i == 0) break;
+                if (i % 2 == 0) {
+                    if (j % 2 == 1) {
+                        if (isOnBoard(new Point(posX + j, posY + i)))
+                            if (field[posX + j][posY + i].getFigure() == null) moves.add(field[posX + j][posY + i]);
+                            else {
+                                if (field[posX + j][posY + i].getFigure().getColor() != cell.getFigure().getColor())
+                                    beatMoves.add(field[posX + j][posY + i]);
+                            }
+                    }
+                } else {
+                    if (j == -2 || j == 2) {
+                        if (isOnBoard(new Point(posX + j, posY + i)))
+                            if (field[posX + j][posY + i].getFigure() == null) moves.add(field[posX + j][posY + i]);
+                            else {
+                                if (field[posX + j][posY + i].getFigure().getColor() != cell.getFigure().getColor())
+                                    beatMoves.add(field[posX + j][posY + i]);
+                            }
+                    }
+                }
+            }
+        }
+        pm.put(TypeOfMove.MOVE, moves);
+        pm.put(TypeOfMove.BEAT, beatMoves);
+        return pm;
     }
 
     public static LinkedHashMap<TypeOfMove, LinkedHashSet<Cell>> getPawnPossibleMoves(Board board, Cell cell) {
