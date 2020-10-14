@@ -42,7 +42,7 @@ public class Board {
     }
 
     public Cell getCell(Point position) {
-        return field[position.x][position.y];
+        return field[position.y][position.x];
     }
 
     public Point getPosition(Cell cell) {

@@ -2,6 +2,7 @@ package rybas.figures;
 
 import rybas.models.Cell;
 import rybas.figures.FigureColor;
+import rybas.figures.FigureType;
 
 public class Figure {
     FigureType type;
@@ -13,11 +14,11 @@ public class Figure {
     }
 
     public FigureColor getColor() {
-        return null;
+        return color;
     }
 
-    public Figure getType() {
-        return null;
+    public FigureType getType() {
+        return type;
     }
 
     public Cell getCurrentCell() {
