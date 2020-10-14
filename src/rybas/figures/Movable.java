@@ -1,6 +1,5 @@
 package rybas.figures;
 
-import rybas.models.Board;
 import rybas.models.Cell;
 
 import java.util.LinkedHashMap;

@@ -1,24 +1,30 @@
 package rybas.figures;
 
 import rybas.models.Cell;
+import rybas.figures.FigureColor;
 
-public interface Figure {
-    enum Type {
-        KING,
-        QUEEN,
-        ROOK,
-        BISHOP,
-        KNIGHT,
-        PAWN
+public class Figure {
+    FigureType type;
+    FigureColor color;
+
+    public Figure(FigureType type, FigureColor color) {
+        this.type = type;
+        this.color = color;
     }
 
-    enum Color {
-        BLACK,
-        WHITE
+    public FigureColor getColor() {
+        return null;
     }
 
-    Color getColor();
-    Figure.Type getType();
-    Cell getCurrentCell();
-    void setCurrentCell(Cell c);
+    public Figure getType() {
+        return null;
+    }
+
+    public Cell getCurrentCell() {
+        return null;
+    }
+
+    public void setCurrentCell(Cell c) {
+
+    }
 }

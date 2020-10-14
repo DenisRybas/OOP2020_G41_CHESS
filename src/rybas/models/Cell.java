@@ -5,16 +5,11 @@ import rybas.figures.Figure;
 import java.awt.*;
 
 public class Cell {
-    private Figure f;
     private CellColor c;
     private Point coordinate;
+    private Figure f;
 
-    enum CellColor {
-        LIGHT,
-        DARK
-    }
-
-    public Cell(Figure f, CellColor c, Point coordinate) {
+    public Cell(CellColor c, Point coordinate, Figure f) {
         this.f = f;
         this.c = c;
         this.coordinate = coordinate;
