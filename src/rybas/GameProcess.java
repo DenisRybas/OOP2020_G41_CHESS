@@ -14,7 +14,7 @@ import java.util.*;
 public class GameProcess {
     private final int playerCount = 2;
     private final CircularPlayerList playerList;
-    private Map<Player, Set<Figure>> player = new HashMap<>();
+    private Map<Player, Set<Figure>> players = new HashMap<>();
 
     private Board field;
     private Cell downLeft;
@@ -24,9 +24,7 @@ public class GameProcess {
         field = new Board();
         downLeft = new Cell();
         upRight = new Cell();
-
-
-        this.playerList = playerList;
+        this.playerList = new CircularPlayerList();
     }
 
 
