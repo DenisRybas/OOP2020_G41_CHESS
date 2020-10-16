@@ -30,4 +30,9 @@ public class Cell {
     public Figure getFigure() {
         return f;
     }
+
+    @Override
+    public String toString() {
+        return coordinate.toString();
+    }
 }

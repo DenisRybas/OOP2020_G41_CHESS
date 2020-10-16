@@ -20,12 +20,4 @@ public class Figure {
     public FigureType getType() {
         return type;
     }
-
-    public Cell getCurrentCell() {
-        return null;
-    }
-
-    public void setCurrentCell(Cell c) {
-
-    }
 }
