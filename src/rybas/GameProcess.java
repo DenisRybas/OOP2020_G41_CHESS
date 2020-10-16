@@ -1,14 +1,9 @@
 package rybas;
 
 import rybas.figures.Figure;
-import rybas.figures.FigureColor;
-import rybas.figures.FigureType;
-import rybas.figures.Movable;
 import rybas.models.Board;
 import rybas.models.Cell;
-import rybas.models.CellColor;
 
-import java.awt.*;
 import java.util.*;
 
 public class GameProcess {

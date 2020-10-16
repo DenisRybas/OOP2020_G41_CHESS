@@ -1,18 +1,6 @@
 package rybas;
 
-import rybas.figures.Figure;
-import rybas.figures.FigureColor;
-import rybas.figures.FigureType;
-import rybas.gui.MainWindow;
-import rybas.models.Board;
-import rybas.models.Cell;
-import rybas.services.ChessService;
 import rybas.tests.FigureTests;
-
-import javax.swing.*;
-import java.awt.*;
-import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
 
 public class Main {
     public static void main(String[] args) {

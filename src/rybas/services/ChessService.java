@@ -1,16 +1,12 @@
 package rybas.services;
 
-import rybas.figures.Figure;
 import rybas.figures.FigureColor;
-import rybas.figures.FigureType;
 import rybas.models.Board;
 import rybas.models.Cell;
 
 import java.awt.*;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
-import java.util.Map;
 
 /*  coordinates of board
  *   are like in array (0-7 x 0-7)
@@ -19,10 +15,6 @@ import java.util.Map;
  */
 
 public class ChessService {
-    public enum TypeOfMove {
-        BEAT,
-        MOVE
-    }
 
     public static LinkedHashMap<TypeOfMove, LinkedHashSet<Cell>> getPossibleMoves(Board board, Cell cell) {
         return switch (cell.getFigure().getType()) {

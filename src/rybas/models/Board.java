@@ -4,8 +4,6 @@ package rybas.models;
 import rybas.figures.*;
 
 import java.awt.*;
-import java.util.HashMap;
-import java.util.Map;
 
 public class Board {
     private Cell[][] field;

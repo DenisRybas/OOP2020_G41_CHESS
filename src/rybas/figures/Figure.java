@@ -1,9 +1,5 @@
 package rybas.figures;
 
-import rybas.models.Cell;
-import rybas.figures.FigureColor;
-import rybas.figures.FigureType;
-
 public class Figure {
     FigureType type;
     FigureColor color;
