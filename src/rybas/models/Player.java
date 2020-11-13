@@ -1,4 +1,4 @@
-package rybas;
+package rybas.models;
 
 public class Player {
     private Player next;

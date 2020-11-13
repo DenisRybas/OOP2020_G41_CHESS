@@ -1,15 +1,10 @@
 package rybas.models;
 
-
 import rybas.figures.*;
-
 import java.awt.*;
 
 public class Board {
     private Cell[][] field;
-    private Cell downLeft;
-    private Cell upRight;
-
 
     public Board() {
         field = new Cell[8][8];
@@ -41,15 +36,6 @@ public class Board {
 
     public Cell getCell(Point position) {
         return field[position.y][position.x];
-    }
-
-    public Point getPosition(Cell cell) {
-        for (int i = 0; i < field.length; i++) {
-            for (int j = 0; j < field[i].length; j++) {
-                if (field[i][j] == cell) return new Point(j, i);
-            }
-        }
-        return null;
     }
 
     public Cell[][] getField() {

@@ -10,47 +10,53 @@ import java.awt.*;
 
 public class FigureTests {
     public static void rookMoveTest() {
+        var service = new ChessService();
         Board b = new Board();
-        b.getCell(new Point(4, 4)).setFigure(new Figure(FigureType.ROOK, FigureColor.BLACK));
-        System.out.println(ChessService.getPossibleMoves(b, b.getCell(new Point(4, 4))).toString());
+        Point p = new Point(4, 4);
+        System.out.println("Current cell is " + p.toString());
+        b.getCell(p).setFigure(new Figure(FigureType.ROOK, FigureColor.BLACK));
+        System.out.println(service.getPossibleMoves(b, b.getCell(p)).toString());
     }
 
     public static void rookBeatTest() {
+        var service = new ChessService();
         Board b = new Board();
-        b.getCell(new Point(4, 4)).setFigure(new Figure(FigureType.ROOK, FigureColor.BLACK));
+        Point p = new Point(4,4);
+        System.out.println("Current point is " + p.toString());
+        b.getCell(p).setFigure(new Figure(FigureType.ROOK, FigureColor.BLACK));
         b.getCell(new Point(4, 5)).setFigure(new Figure(FigureType.ROOK, FigureColor.WHITE));
         b.getCell(new Point(5, 4)).setFigure(new Figure(FigureType.ROOK, FigureColor.WHITE));
         b.getCell(new Point(3, 4)).setFigure(new Figure(FigureType.ROOK, FigureColor.WHITE));
         b.getCell(new Point(4, 3)).setFigure(new Figure(FigureType.ROOK, FigureColor.WHITE));
-        System.out.println(ChessService.getPossibleMoves(b, b.getCell(new Point(4, 4))).toString());
+        System.out.println(service.getPossibleMoves(b, b.getCell(p)).toString());
     }
 
     public static void pawnBeatTest() {
+        var service = new ChessService();
         Board b = new Board();
-        b.getCell(new Point(4, 4)).setFigure(new Figure(FigureType.PAWN, FigureColor.BLACK));
+        Point p = new Point(4,4);
+        System.out.println("Current point is " + p.toString());
+        b.getCell(p).setFigure(new Figure(FigureType.PAWN, FigureColor.BLACK));
         b.getCell(new Point(3, 3)).setFigure(new Figure(FigureType.ROOK, FigureColor.WHITE));
         b.getCell(new Point(4, 3)).setFigure(new Figure(FigureType.ROOK, FigureColor.WHITE));
         b.getCell(new Point(5, 3)).setFigure(new Figure(FigureType.ROOK, FigureColor.WHITE));
-        System.out.println(ChessService.getPossibleMoves(b, b.getCell(new Point(4, 4))).toString());
+        System.out.println(service.getPossibleMoves(b, b.getCell(p)).toString());
     }
 
     public static void pawnMoveTest() {
+        var service = new ChessService();
         Board b = new Board();
-        b.getCell(new Point(4, 1)).setFigure(new Figure(FigureType.PAWN, FigureColor.BLACK));
-        System.out.println(ChessService.getPossibleMoves(b, b.getCell(new Point(4, 6))).toString());
-    }
-
-    public static void queenTest() {
-        Board b = new Board();
-        b.getCell(new Point(4, 4)).setFigure(new Figure(FigureType.ROOK, FigureColor.BLACK));
-        b.getCell(new Point(4, 5)).setFigure(new Figure(FigureType.ROOK, FigureColor.WHITE));
-        b.getCell(new Point(5, 5)).setFigure(new Figure(FigureType.ROOK, FigureColor.WHITE));
-        System.out.println(ChessService.getPossibleMoves(b, b.getCell(new Point(4, 4))).toString());
+        Point p = new Point(4,6);
+        System.out.println("Current point is " + p.toString());
+        System.out.println(service.getPossibleMoves(b, b.getCell(p)).toString());
     }
 
     public static void kingBeatTest() {
+        var service = new ChessService();
         Board b = new Board();
-        b.getCell(new Point(4, 4)).setFigure(new Figure(FigureType.KING, FigureColor.BLACK));
+        Point p = new Point(4,4);
+        System.out.println("Current point is " + p.toString());
+        b.getCell(p).setFigure(new Figure(FigureType.KING, FigureColor.BLACK));
         b.getCell(new Point(3, 4)).setFigure(new Figure(FigureType.ROOK, FigureColor.WHITE));
         b.getCell(new Point(5, 4)).setFigure(new Figure(FigureType.ROOK, FigureColor.WHITE));
         b.getCell(new Point(3, 5)).setFigure(new Figure(FigureType.ROOK, FigureColor.WHITE));
@@ -59,46 +65,70 @@ public class FigureTests {
         b.getCell(new Point(3, 3)).setFigure(new Figure(FigureType.ROOK, FigureColor.WHITE));
         b.getCell(new Point(4, 3)).setFigure(new Figure(FigureType.ROOK, FigureColor.WHITE));
         b.getCell(new Point(5, 3)).setFigure(new Figure(FigureType.ROOK, FigureColor.WHITE));
-        System.out.println(ChessService.getPossibleMoves(b, b.getCell(new Point(4, 4))).toString());
+        System.out.println(service.getPossibleMoves(b, b.getCell(p)).toString());
     }
 
     public static void kingMoveTest() {
+        var service = new ChessService();
         Board b = new Board();
-        b.getCell(new Point(4, 4)).setFigure(new Figure(FigureType.KING, FigureColor.BLACK));
-        System.out.println(ChessService.getPossibleMoves(b, b.getCell(new Point(4, 4))).toString());
+        Point p = new Point(4,4);
+        System.out.println("Current point is " + p.toString());
+        b.getCell(p).setFigure(new Figure(FigureType.KING, FigureColor.BLACK));
+        System.out.println(service.getPossibleMoves(b, b.getCell(p)).toString());
     }
 
     public static void bishopMoveTest() {
+        var service = new ChessService();
         Board b = new Board();
-        b.getCell(new Point(4, 3)).setFigure(new Figure(FigureType.BISHOP, FigureColor.BLACK));
-        System.out.println(ChessService.getPossibleMoves(b, b.getCell(new Point(4, 3))).toString());
+        Point p = new Point(4,3);
+        System.out.println("Current point is " + p.toString());
+        b.getCell(p).setFigure(new Figure(FigureType.BISHOP, FigureColor.BLACK));
+        System.out.println(service.getPossibleMoves(b, b.getCell(p)).toString());
     }
 
     public static void bishopBeatTest() {
+        var service = new ChessService();
         Board b = new Board();
-        b.getCell(new Point(4, 3)).setFigure(new Figure(FigureType.BISHOP, FigureColor.BLACK));
+        Point p = new Point(4,3);
+        System.out.println("Current point is " + p.toString());
+        b.getCell(p).setFigure(new Figure(FigureType.BISHOP, FigureColor.BLACK));
         b.getCell(new Point(5, 4)).setFigure(new Figure(FigureType.ROOK, FigureColor.WHITE));
         b.getCell(new Point(3, 2)).setFigure(new Figure(FigureType.ROOK, FigureColor.WHITE));
         b.getCell(new Point(5, 2)).setFigure(new Figure(FigureType.ROOK, FigureColor.WHITE));
         b.getCell(new Point(3, 4)).setFigure(new Figure(FigureType.ROOK, FigureColor.WHITE));
-        System.out.println(ChessService.getPossibleMoves(b, b.getCell(new Point(4, 3))).toString());
+        System.out.println(service.getPossibleMoves(b, b.getCell(p)).toString());
     }
 
     public static void knightMoveTest() {
+        var service = new ChessService();
         Board b = new Board();
-        b.getCell(new Point(4, 4)).setFigure(new Figure(FigureType.KNIGHT, FigureColor.BLACK));
-        System.out.println(ChessService.getPossibleMoves(b, b.getCell(new Point(4, 4))).toString());
+        Point p = new Point(4,4);
+        System.out.println("Current point is " + p.toString());
+        b.getCell(p).setFigure(new Figure(FigureType.KNIGHT, FigureColor.BLACK));
+        System.out.println(service.getPossibleMoves(b, b.getCell(p)).toString());
     }
 
     public static void knightBeatTest() {
+        var service = new ChessService();
         Board b = new Board();
-        b.getCell(new Point(4, 4)).setFigure(new Figure(FigureType.KNIGHT, FigureColor.BLACK));
+        Point p = new Point(4,4);
+        System.out.println("Current point is " + p.toString());
+        b.getCell(p).setFigure(new Figure(FigureType.KNIGHT, FigureColor.BLACK));
         b.getCell(new Point(5, 2)).setFigure(new Figure(FigureType.ROOK, FigureColor.WHITE));
         b.getCell(new Point(2, 3)).setFigure(new Figure(FigureType.ROOK, FigureColor.WHITE));
         b.getCell(new Point(6, 3)).setFigure(new Figure(FigureType.ROOK, FigureColor.WHITE));
         b.getCell(new Point(2, 5)).setFigure(new Figure(FigureType.ROOK, FigureColor.WHITE));
         b.getCell(new Point(6, 5)).setFigure(new Figure(FigureType.ROOK, FigureColor.WHITE));
-        System.out.println(ChessService.getPossibleMoves(b, b.getCell(new Point(4, 4))).toString());
+        System.out.println(service.getPossibleMoves(b, b.getCell(p)).toString());
+    }
+
+    public static void queenMoveTest() {
+        var service = new ChessService();
+        Board b = new Board();
+        Point p = new Point(4,4);
+        System.out.println("Current point is " + p.toString());
+        b.getCell(p).setFigure(new Figure(FigureType.QUEEN, FigureColor.BLACK));
+        System.out.println(service.getPossibleMoves(b, b.getCell(p)).toString());
     }
 
     public static void testAll() {

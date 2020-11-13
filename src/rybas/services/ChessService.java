@@ -16,7 +16,7 @@ import java.util.LinkedHashSet;
 
 public class ChessService {
 
-    public static LinkedHashMap<TypeOfMove, LinkedHashSet<Cell>> getPossibleMoves(Board board, Cell cell) {
+    public LinkedHashMap<TypeOfMove, LinkedHashSet<Cell>> getPossibleMoves(Board board, Cell cell) {
         return switch (cell.getFigure().getType()) {
             case ROOK -> getRookPossibleMoves(board, cell);
             case PAWN -> getPawnPossibleMoves(board, cell);
@@ -27,7 +27,7 @@ public class ChessService {
         };
     }
 
-    private static LinkedHashMap<TypeOfMove, LinkedHashSet<Cell>> getPawnPossibleMoves(Board board, Cell cell) {
+    private LinkedHashMap<TypeOfMove, LinkedHashSet<Cell>> getPawnPossibleMoves(Board board, Cell cell) {
         LinkedHashMap<TypeOfMove, LinkedHashSet<Cell>> pm = new LinkedHashMap<>();
         LinkedHashSet<Cell> beatMoves = new LinkedHashSet<>();
         LinkedHashSet<Cell> moves = new LinkedHashSet<>();
@@ -80,7 +80,7 @@ public class ChessService {
         return pm;
     }
 
-    private static LinkedHashMap<TypeOfMove, LinkedHashSet<Cell>> getKingPossibleMoves(Board board, Cell cell) {
+    private LinkedHashMap<TypeOfMove, LinkedHashSet<Cell>> getKingPossibleMoves(Board board, Cell cell) {
         LinkedHashMap<TypeOfMove, LinkedHashSet<Cell>> pm = new LinkedHashMap<>();
         LinkedHashSet<Cell> beatMoves = new LinkedHashSet<>();
         LinkedHashSet<Cell> moves = new LinkedHashSet<>();
@@ -104,7 +104,7 @@ public class ChessService {
         return pm;
     }
 
-    private static LinkedHashMap<TypeOfMove, LinkedHashSet<Cell>> getKnightPossibleMoves(Board board, Cell cell) {
+    private LinkedHashMap<TypeOfMove, LinkedHashSet<Cell>> getKnightPossibleMoves(Board board, Cell cell) {
         LinkedHashMap<TypeOfMove, LinkedHashSet<Cell>> pm = new LinkedHashMap<>();
         LinkedHashSet<Cell> beatMoves = new LinkedHashSet<>();
         LinkedHashSet<Cell> moves = new LinkedHashSet<>();
@@ -141,7 +141,7 @@ public class ChessService {
         return pm;
     }
 
-    private static LinkedHashMap<TypeOfMove, LinkedHashSet<Cell>> getRookPossibleMoves(Board board, Cell cell) {
+    private LinkedHashMap<TypeOfMove, LinkedHashSet<Cell>> getRookPossibleMoves(Board board, Cell cell) {
         LinkedHashMap<TypeOfMove, LinkedHashSet<Cell>> pm = new LinkedHashMap<>();
         LinkedHashSet<Cell> beatMoves = new LinkedHashSet<>();
         LinkedHashSet<Cell> moves = new LinkedHashSet<>();
@@ -199,7 +199,7 @@ public class ChessService {
         return pm;
     }
 
-    private static LinkedHashMap<TypeOfMove, LinkedHashSet<Cell>> getBishopPossibleMoves(Board board, Cell cell) {
+    private LinkedHashMap<TypeOfMove, LinkedHashSet<Cell>> getBishopPossibleMoves(Board board, Cell cell) {
         LinkedHashMap<TypeOfMove, LinkedHashSet<Cell>> pm = new LinkedHashMap<>();
         LinkedHashSet<Cell> beatMoves = new LinkedHashSet<>();
         LinkedHashSet<Cell> moves = new LinkedHashSet<>();
@@ -270,14 +270,14 @@ public class ChessService {
         return pm;
     }
 
-    private static LinkedHashMap<TypeOfMove, LinkedHashSet<Cell>> getQueenPossibleMoves(Board board, Cell cell) {
+    private LinkedHashMap<TypeOfMove, LinkedHashSet<Cell>> getQueenPossibleMoves(Board board, Cell cell) {
         return new LinkedHashMap<>() {{
             putAll(getBishopPossibleMoves(board, cell));
             putAll(getRookPossibleMoves(board, cell));
         }};
     }
 
-    private static boolean isOnBoard(Point p) {
+    private boolean isOnBoard(Point p) {
         if (p == null) return false;
         return !(p.getX() < 0 ||
                 p.getX() >= 8 ||

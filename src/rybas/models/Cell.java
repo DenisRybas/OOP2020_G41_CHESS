@@ -1,17 +1,18 @@
 package rybas.models;
 
+import com.google.gson.annotations.SerializedName;
 import rybas.figures.Figure;
 
 import java.awt.*;
 
 public class Cell {
-    private CellColor c;
+    private CellColor color;
     private Point coordinate;
-    private Figure f;
+    private Figure figure;
 
-    public Cell(CellColor c, Point coordinate, Figure f) {
-        this.f = f;
-        this.c = c;
+    public Cell(CellColor color, Point coordinate, Figure figure) {
+        this.figure = figure;
+        this.color = color;
         this.coordinate = coordinate;
     }
 
@@ -20,15 +21,15 @@ public class Cell {
     }
 
     public Cell() {
-        this.f = null;
+        this.figure = null;
     }
 
-    public void setFigure(Figure f) {
-        this.f = f;
+    public void setFigure(Figure figure) {
+        this.figure = figure;
     }
 
     public Figure getFigure() {
-        return f;
+        return figure;
     }
 
     @Override

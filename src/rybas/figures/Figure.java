@@ -1,8 +1,8 @@
 package rybas.figures;
 
 public class Figure {
-    FigureType type;
-    FigureColor color;
+    private FigureType type;
+    private FigureColor color;
 
     public Figure(FigureType type, FigureColor color) {
         this.type = type;
