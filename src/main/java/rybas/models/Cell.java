@@ -1,6 +1,5 @@
 package rybas.models;
 
-import com.google.gson.annotations.SerializedName;
 import rybas.figures.Figure;
 
 import java.awt.*;

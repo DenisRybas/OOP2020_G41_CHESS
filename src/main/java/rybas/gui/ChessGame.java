@@ -1,19 +1,15 @@
 package rybas.gui;
 
-import com.google.gson.Gson;
-import com.google.gson.annotations.SerializedName;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import rybas.models.Board;
-import rybas.serializers.Serializer;
 import rybas.services.SerializeService;
 
 import java.io.BufferedWriter;
@@ -21,8 +17,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.util.ServiceLoader;
-import java.util.logging.Logger;
 
 public class ChessGame extends Application {
 
@@ -90,5 +84,9 @@ public class ChessGame extends Application {
         primaryStage.setMinWidth(primaryStage.getWidth());
         primaryStage.setMinHeight(primaryStage.getHeight());
 
+    }
+
+    public static void main(String[] args) {
+        launch(args);
     }
 }

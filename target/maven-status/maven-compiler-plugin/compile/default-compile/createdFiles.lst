@@ -1,0 +1,16 @@
+rybas/services/ChessService$1.class
+rybas/services/SerializeService.class
+rybas/models/CellColor.class
+rybas/GameProcess.class
+rybas/services/TypeOfMove.class
+rybas/models/CircularPlayerList.class
+rybas/services/ChessService.class
+rybas/gui/ChessGame.class
+rybas/figures/Figure.class
+rybas/models/Board.class
+rybas/tests/FigureTests.class
+rybas/models/Cell.class
+rybas/models/Player.class
+rybas/figures/FigureType.class
+rybas/services/ChessService$2.class
+rybas/figures/FigureColor.class
