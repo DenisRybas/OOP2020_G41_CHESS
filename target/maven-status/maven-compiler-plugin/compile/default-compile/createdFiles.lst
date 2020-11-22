@@ -1,8 +1,8 @@
+rybas/models/TypeOfMove.class
 rybas/services/ChessService$1.class
 rybas/services/SerializeService.class
 rybas/models/CellColor.class
 rybas/GameProcess.class
-rybas/services/TypeOfMove.class
 rybas/models/CircularPlayerList.class
 rybas/services/ChessService.class
 rybas/gui/ChessGame.class

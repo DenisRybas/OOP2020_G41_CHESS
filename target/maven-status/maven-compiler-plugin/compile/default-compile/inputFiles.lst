@@ -1,9 +1,7 @@
 /home/user/IdeaProjects/OOP2020_G41_CHESS/src/main/java/rybas/services/ChessService.java
 /home/user/IdeaProjects/OOP2020_G41_CHESS/src/main/java/rybas/models/Board.java
-/home/user/IdeaProjects/OOP2020_G41_CHESS/src/main/java/rybas/factories/figureFactory/FigureFactory.java
 /home/user/IdeaProjects/OOP2020_G41_CHESS/src/main/java/rybas/tests/FigureTests.java
 /home/user/IdeaProjects/OOP2020_G41_CHESS/src/main/java/rybas/GameProcess.java
-/home/user/IdeaProjects/OOP2020_G41_CHESS/src/main/java/rybas/services/TypeOfMove.java
 /home/user/IdeaProjects/OOP2020_G41_CHESS/src/main/java/rybas/models/CellColor.java
 /home/user/IdeaProjects/OOP2020_G41_CHESS/src/main/java/rybas/services/SerializeService.java
 /home/user/IdeaProjects/OOP2020_G41_CHESS/src/main/java/rybas/models/Cell.java
@@ -13,3 +11,4 @@
 /home/user/IdeaProjects/OOP2020_G41_CHESS/src/main/java/rybas/figures/Figure.java
 /home/user/IdeaProjects/OOP2020_G41_CHESS/src/main/java/rybas/models/CircularPlayerList.java
 /home/user/IdeaProjects/OOP2020_G41_CHESS/src/main/java/rybas/figures/FigureType.java
+/home/user/IdeaProjects/OOP2020_G41_CHESS/src/main/java/rybas/models/TypeOfMove.java

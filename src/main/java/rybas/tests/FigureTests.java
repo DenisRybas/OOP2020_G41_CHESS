@@ -1,8 +1,8 @@
 package rybas.tests;
 
-import rybas.figures.Figure;
-import rybas.figures.FigureColor;
-import rybas.figures.FigureType;
+import rybas.models.figures.Figure;
+import rybas.models.figures.FigureColor;
+import rybas.models.figures.FigureType;
 import rybas.models.Board;
 import rybas.services.ChessService;
 

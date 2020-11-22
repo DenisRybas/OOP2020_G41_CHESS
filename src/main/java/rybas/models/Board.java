@@ -1,6 +1,8 @@
 package rybas.models;
 
-import rybas.figures.*;
+import rybas.models.cells.Cell;
+import rybas.models.cells.CellColor;
+import rybas.models.figures.*;
 import java.awt.*;
 
 public class Board {
@@ -36,6 +38,10 @@ public class Board {
 
     public Cell getCell(Point position) {
         return field[position.y][position.x];
+    }
+
+    public void setField(Cell[][] field) {
+        this.field = field;
     }
 
     public Cell[][] getField() {

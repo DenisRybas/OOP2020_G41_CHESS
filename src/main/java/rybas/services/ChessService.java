@@ -1,8 +1,9 @@
 package rybas.services;
 
-import rybas.figures.FigureColor;
+import rybas.models.figures.FigureColor;
 import rybas.models.Board;
-import rybas.models.Cell;
+import rybas.models.cells.Cell;
+import rybas.models.figures.TypeOfMove;
 
 import java.awt.*;
 import java.util.LinkedHashMap;
@@ -34,7 +35,7 @@ public class ChessService {
         Cell[][] field = board.getField();
         int posX = cell.getCoordinate().x;
         int posY = cell.getCoordinate().y;
-
+        pm.put(TypeOfMove.STAY, new LinkedHashSet<>() {{add(cell);}});
         //TODO: пешка дошла до конца
 
         if (cell.getFigure().getColor() == FigureColor.BLACK) {
@@ -87,6 +88,8 @@ public class ChessService {
         Cell[][] field = board.getField();
         int posX = cell.getCoordinate().x;
         int posY = cell.getCoordinate().y;
+        pm.put(TypeOfMove.STAY, new LinkedHashSet<>() {{add(cell);}});
+
 
         for (int i = posY - 1; i < posY + 2; i++) {
             for (int j = posX - 1; j < posX + 2; j++) {
@@ -111,6 +114,7 @@ public class ChessService {
         Cell[][] field = board.getField();
         int posX = cell.getCoordinate().x;
         int posY = cell.getCoordinate().y;
+        pm.put(TypeOfMove.STAY, new LinkedHashSet<>() {{add(cell);}});
 
         for (int i = -2; i < 3; i++) {
             for (int j = -2; j < 3; j++) {
@@ -148,6 +152,7 @@ public class ChessService {
         Cell[][] field = board.getField();
         int posX = cell.getCoordinate().x;
         int posY = cell.getCoordinate().y;
+        pm.put(TypeOfMove.STAY, new LinkedHashSet<>() {{add(cell);}});
 
         //TODO: рокировка
         if (isOnBoard(new Point(posX, posY - 1)))
@@ -206,6 +211,7 @@ public class ChessService {
         Cell[][] field = board.getField();
         int posX = cell.getCoordinate().x;
         int posY = cell.getCoordinate().y;
+        pm.put(TypeOfMove.STAY, new LinkedHashSet<>() {{add(cell);}});
 
 
         int i = posY + 1, j = posX + 1;
@@ -271,9 +277,11 @@ public class ChessService {
     }
 
     private LinkedHashMap<TypeOfMove, LinkedHashSet<Cell>> getQueenPossibleMoves(Board board, Cell cell) {
+
         return new LinkedHashMap<>() {{
             putAll(getBishopPossibleMoves(board, cell));
             putAll(getRookPossibleMoves(board, cell));
+            put(TypeOfMove.STAY, new LinkedHashSet<>() {{add(cell);}});
         }};
     }
 

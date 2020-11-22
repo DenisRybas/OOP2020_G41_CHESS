@@ -1,10 +1,9 @@
 package rybas;
 
-import rybas.figures.Figure;
+import rybas.models.figures.Figure;
 import rybas.models.Board;
-import rybas.models.Cell;
-import rybas.models.CircularPlayerList;
-import rybas.models.Player;
+import rybas.models.players.CircularPlayerList;
+import rybas.models.players.Player;
 
 import java.util.*;
 
