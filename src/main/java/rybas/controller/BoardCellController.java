@@ -37,10 +37,18 @@ public class BoardCellController extends Controller<BoardCellView> {
             } else if (possibleMoves.get(TypeOfMove.BEAT).size() == 0 &&
                     possibleMoves.get(TypeOfMove.MOVE).size() == 0 &&
                     mainController.getCells().get(view.getButton()).getFigure() != null) {
+                highlightPossibleMoves();
+            } else if (possibleMoves.get(TypeOfMove.MOVE).contains(mainController.getCells().get(view.getButton())) &&
+                    mainController.getCells().get(view.getButton()).getFigure() != null) {
+                highlightPossibleMoves();
+            } else if (possibleMoves.get(TypeOfMove.BEAT).contains(mainController.getCells().get(view.getButton()))) {
+                makeMove();
+            } else if (mainController.getCells().get(view.getButton()).getFigure() != null) {
                 resetGraphics();
                 highlightPossibleMoves();
             } else if (possibleMoves.size() != 0) {
                 makeMove();
+                resetGraphics();
             }
         } catch (NullPointerException ex) {
             System.out.println(ex.getMessage());
@@ -75,6 +83,8 @@ public class BoardCellController extends Controller<BoardCellView> {
         for (Map.Entry<Button, String> cc : mainController.getSelectedCellsColors().entrySet()) {
             cc.getKey().setStyle(cc.getValue());
         }
+        mainController.setSelectedCellsColors(new LinkedHashMap<>());
+        mainController.setPossibleMoves(new LinkedHashMap<>());
     }
 
     private void makeMove() {
@@ -99,8 +109,8 @@ public class BoardCellController extends Controller<BoardCellView> {
 
                                 break;
                             }
-                            mainController.setPossibleMoves(new LinkedHashMap<>());
-                            mainController.setSelectedCellsColors(new LinkedHashMap<>());
+                        mainController.setPossibleMoves(new LinkedHashMap<>());
+                        mainController.setSelectedCellsColors(new LinkedHashMap<>());
                     }
                 }
             }
