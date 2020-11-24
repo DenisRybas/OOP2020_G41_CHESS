@@ -50,6 +50,7 @@ public class MainController {
         this.createNewGame = new CreateNewGameController(primaryStage);
         this.possibleMoves = new LinkedHashMap<>();
         this.cells = new LinkedHashMap<>();
+        this.selectedCellsColors = new LinkedHashMap<>();
     }
 
     public CreateNewGameController getCreateNewGame() {
