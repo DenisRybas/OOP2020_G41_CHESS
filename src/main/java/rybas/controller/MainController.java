@@ -4,6 +4,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import rybas.GameProcess;
 import rybas.gui.ChessGame;
 import rybas.models.Board;
 import rybas.models.MainModel;
@@ -19,17 +20,23 @@ import java.util.LinkedHashSet;
 
 public class MainController {
     private static MainController instance;
-    
+
+    private GameProcess gameProcess;
+
     private CreateNewGameController createNewGame;
+
     private AddToJsonController addToJson;
     private GetFromJsonController getFromJson;
-
     private LinkedHashMap<TypeOfMove, LinkedHashSet<Cell>> possibleMoves;
+
     private LinkedHashMap<Button, Cell> cells;
     private LinkedHashMap<Button, String> selectedCellsColors;
-
     public LinkedHashMap<Button, String> getSelectedCellsColors() {
         return selectedCellsColors;
+    }
+
+    public void setGameProcess(GameProcess gameProcess) {
+        this.gameProcess = gameProcess;
     }
 
     public void setSelectedCellsColors(LinkedHashMap<Button, String> selectedCellsColors) {
@@ -44,7 +51,12 @@ public class MainController {
         return possibleMoves;
     }
 
+    public GameProcess getGameProcess() {
+        return gameProcess;
+    }
+
     private MainController(Stage primaryStage) {
+        this.gameProcess = new GameProcess();
         this.addToJson = new AddToJsonController(primaryStage);
         this.getFromJson = new GetFromJsonController(primaryStage);
         this.createNewGame = new CreateNewGameController(primaryStage);

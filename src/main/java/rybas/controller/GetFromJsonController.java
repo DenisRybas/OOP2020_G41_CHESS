@@ -4,6 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import rybas.GameProcess;
+import rybas.gui.ChessGame;
 import rybas.models.Board;
 import rybas.models.MainModel;
 import rybas.services.SerializeService;
@@ -29,7 +31,7 @@ public class GetFromJsonController extends Controller<GetFromJsonView> implement
 
     @Override
     public void handle(ActionEvent event) {
-        SerializeService<Board> serializeService = new SerializeService<>();
+        SerializeService<GameProcess> serializeService = new SerializeService<>();
         FileChooser fileChooser = new FileChooser();
         StringBuilder builder = new StringBuilder();
         File file = fileChooser.showOpenDialog(null);
@@ -40,7 +42,7 @@ public class GetFromJsonController extends Controller<GetFromJsonView> implement
                 System.out.println(ex.getMessage());
             }
         }
-        Board board = new Board();
-        MainModel.getInstance().setBoard(serializeService.deserialize(builder.toString(), board));
+        GameProcess process = new GameProcess();
+        MainController.getInstance(ChessGame.getPrimaryStage()).setGameProcess(serializeService.deserialize(builder.toString(), process));
     }
 }

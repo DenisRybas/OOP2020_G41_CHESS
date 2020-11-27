@@ -3,6 +3,8 @@ package rybas.controller;
 import javafx.event.ActionEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import rybas.GameProcess;
+import rybas.gui.ChessGame;
 import rybas.models.Board;
 import rybas.models.MainModel;
 import rybas.services.SerializeService;
@@ -30,8 +32,8 @@ public class AddToJsonController extends Controller<AddToJsonView> {
     public void handle(ActionEvent event) {
         final Object source = event.getSource();
         if (source.equals(view.getButton())) {
-            SerializeService<Board> serializeService = new SerializeService<>();
-            String json = serializeService.serialize(MainModel.getInstance().getBoard());
+            SerializeService<GameProcess> serializeService = new SerializeService<>();
+            String json = serializeService.serialize(MainController.getInstance(ChessGame.getPrimaryStage()).getGameProcess());
             FileChooser fileChooser = new FileChooser();
             File file = fileChooser.showOpenDialog(null);
             if (file != null) {

@@ -1,13 +1,15 @@
 package rybas.models.players;
 
-public class Player {
-    private Player next;
+import rybas.models.figures.FigureColor;
 
-    public void setNext(Player next) {
-        this.next = next;
+public class Player {
+    private FigureColor color;
+
+    public Player(FigureColor color) {
+        this.color = color;
     }
 
-    public Player getNext() {
-        return next;
+    public FigureColor getColor() {
+        return color;
     }
 }
