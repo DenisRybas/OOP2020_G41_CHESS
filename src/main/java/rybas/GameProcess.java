@@ -1,6 +1,5 @@
 package rybas;
 
-import rybas.models.figures.Figure;
 import rybas.models.Board;
 import rybas.models.figures.FigureColor;
 import rybas.models.players.Player;

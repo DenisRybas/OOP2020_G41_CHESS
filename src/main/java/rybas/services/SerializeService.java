@@ -6,7 +6,6 @@ import com.google.gson.GsonBuilder;
 import java.lang.reflect.Type;
 
 public class SerializeService<T> {
-    //TODO: кто ходит, FxService
     public String serialize(T element) {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         return gson.toJson(element);

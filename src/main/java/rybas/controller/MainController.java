@@ -7,13 +7,10 @@ import javafx.stage.Stage;
 import rybas.GameProcess;
 import rybas.gui.ChessGame;
 import rybas.models.Board;
-import rybas.models.MainModel;
 import rybas.models.cells.Cell;
 import rybas.models.cells.CellColor;
 import rybas.models.figures.TypeOfMove;
-import rybas.services.ChessService;
 import rybas.utils.FxUtils;
-import rybas.view.BoardCellView;
 
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;

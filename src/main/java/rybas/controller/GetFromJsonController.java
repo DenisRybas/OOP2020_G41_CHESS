@@ -6,8 +6,6 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import rybas.GameProcess;
 import rybas.gui.ChessGame;
-import rybas.models.Board;
-import rybas.models.MainModel;
 import rybas.services.SerializeService;
 import rybas.view.GetFromJsonView;
 

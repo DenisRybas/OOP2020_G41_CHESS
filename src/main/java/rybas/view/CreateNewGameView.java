@@ -2,7 +2,6 @@ package rybas.view;
 
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
-import rybas.controller.AddToJsonController;
 import rybas.controller.CreateNewGameController;
 
 public class CreateNewGameView extends HBox {

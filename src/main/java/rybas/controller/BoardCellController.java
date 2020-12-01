@@ -5,7 +5,6 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import rybas.gui.ChessGame;
-import rybas.models.MainModel;
 import rybas.models.cells.Cell;
 import rybas.models.figures.FigureColor;
 import rybas.models.figures.TypeOfMove;
